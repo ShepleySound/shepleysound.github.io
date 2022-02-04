@@ -1,39 +1,72 @@
+:root {
+  box-sizing: border-box;
+}
+
+:root.dark {
+  --scheme-color-1: #121212; /* main background color */
+  --scheme-color-odd: #343843bb; /* card-odd background color */
+  --scheme-color-even: #8e4c43bb;
+  --scheme-color-3: #a87669bb; /* hover background color */
+  --scheme-color-4: #b16d53aa; /* active background color */
+  --scheme-color-5: #dacfc3; /* header text color */
+  --scheme-color-6: #f6f5f1cb; /* card text color */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  margin: 60px auto;
-  width: 70%;
-  background-color: #242424;
-  color: white;
+  padding: 18px;
+  background-color: var(--scheme-color-1);
+  color: var(--scheme-color-5);
+  font-family: Arial, Helvetica, sans-serif;
 }
-nav ul, footer ul {
-  font-family:'Helvetica', 'Arial', 'Sans-Serif';
-  padding: 0px;
-  list-style: none;
-  font-weight: bold;
-}
-nav ul li, footer ul li {
-  display: inline;
-  margin-right: 20px;
+
+header h1 {
+  text-align: center;
+  margin: 8px;
 }
 a {
   text-decoration: none;
-  color: #999;
 }
-a:hover {
-  text-decoration: underline;
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  justify-items: center;
 }
-h1 {
-  font-size: 2em;
-  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+.project-link {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--scheme-color-6);
+  height: 100%;
+  min-height: 200px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: var(--scheme-color-odd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 150ms;
 }
-p {
-  font-size: 1.5em;
-  line-height: 1.4em;
-  color: #333;
+.project-link:nth-child(2n + 2) {
+  background-color: var(--scheme-color-even);
 }
-footer {
-  border-top: 1px solid #d5d5d5;
-  font-size: 1.5em;
+.project-link:hover {
+  background-color: var(--scheme-color-3);
 }
-ul.posts li {
-  list-style: none;
+
+.project-link:active {
+  background-color: var(--scheme-color-4);
+}
+
+i.description {
+  font-size: 1rem;
 }
