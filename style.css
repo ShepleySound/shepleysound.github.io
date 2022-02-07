@@ -19,20 +19,37 @@
 }
 
 body {
-  margin: 18px;
+  width: 100%;
+  margin: 0;
   background-color: var(--scheme-color-1);
   color: var(--scheme-color-5);
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "roboto", sans-serif;
+}
+
+header {
+  padding: 12px;
+  width: 100%;
+  background-color: #242424;
 }
 
 header h1 {
-  font-size: calc(1.5rem + 1vw);
+  font-size: 1.5rem;
+  font-weight: 500;
   text-align: center;
   margin: 8px;
 }
 
+.content {
+  padding: 12px;
+  max-width: 800px;
+}
+
 h2 {
-  font-size: calc(1.1rem + 1vw);
+  font-size: 1.3rem;
 }
 a {
   text-decoration: none;
@@ -45,8 +62,8 @@ a {
   justify-items: center;
 }
 .project-link {
-  font-size: calc(1.1rem + 1vw);
-  font-weight: 800;
+  font-size: 1.3rem;
+  font-weight: 500;
   color: var(--scheme-color-6);
   height: 100%;
   min-height: 200px;
@@ -80,4 +97,18 @@ i.description {
   .project-container {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  width: 100%;
+  background-color: #242424;
+}
+
+footer .github-logo {
+  width: 48px;
 }
