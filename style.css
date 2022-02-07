@@ -4,10 +4,12 @@
 
 :root.dark {
   --scheme-color-1: #121212; /* main background color */
-  --scheme-color-odd: #343843bb; /* card-odd background color */
-  --scheme-color-even: #8e4c43bb;
-  --scheme-color-3: #a87669bb; /* hover background color */
-  --scheme-color-4: #b16d53aa; /* active background color */
+  --color-odd: #343843bb; /* odd background color */
+  --color-odd-hover: #475f7ebb; /* odd hover background color */
+  --color-odd-active: #40618daa; /* even active background color */
+  --color-even: #8e4c43bb; /* even background color */
+  --color-even-hover: #996052bb; /* even hover background color */
+  --color-even-active: #b16d53aa; /* even active background color */
   --scheme-color-5: #dacfc3; /* header text color */
   --scheme-color-6: #f6f5f1cb; /* card text color */
 }
@@ -45,7 +47,7 @@ header h1 {
 
 .content {
   padding: 12px;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 h2 {
@@ -61,16 +63,42 @@ a {
   align-items: center;
   justify-items: center;
 }
-.project-link {
+
+.project-card {
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--scheme-color-6);
+  width: 100%;
   height: 100%;
   min-height: 200px;
-  width: 100%;
-  padding: calc(6px + 1vw);
   border-radius: 8px;
-  background-color: var(--scheme-color-odd);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-odd);
+  align-items: center;
+}
+
+.project-link {
+  font-size: 1.5rem;
+  /* font-weight: 500; */
+  height: calc(100%);
+  border-radius: 8px 8px 0px 0px;
+}
+
+.project-source {
+  color: var(--scheme-color-6);
+  width: 100%;
+  text-align: center;
+  border-radius: 0px 0px 8px 8px;
+  height: 60px;
+  border-top: 2px solid var(--scheme-color-1);
+  background-color: #00000015;
+}
+
+.project-link,
+.project-source {
+  color: var(--scheme-color-6);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,15 +106,29 @@ a {
   text-align: center;
   transition: background-color 150ms;
 }
-.project-link:nth-child(2n + 2) {
-  background-color: var(--scheme-color-even);
-}
-.project-link:hover {
-  background-color: var(--scheme-color-3);
+
+.project-link:hover,
+.project-source:hover {
+  background-color: var(--color-odd-hover);
 }
 
-.project-link:active {
-  background-color: var(--scheme-color-4);
+.project-link:active,
+.project-source:active {
+  background-color: var(--color-odd-active);
+}
+
+.project-card:nth-child(2n + 2) {
+  background-color: var(--color-even);
+}
+
+.project-card:nth-child(2n + 2) .project-link:hover,
+.project-card:nth-child(2n + 2) .project-source:hover {
+  background-color: var(--color-even-hover);
+}
+
+.project-card:nth-child(2n + 2) .project-link:active,
+.project-card:nth-child(2n + 2) .project-source:active {
+  background-color: var(--color-even-active);
 }
 
 i.description {
@@ -101,7 +143,6 @@ i.description {
 
 footer {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 96px;
@@ -109,6 +150,15 @@ footer {
   background-color: #242424;
 }
 
-footer .github-logo {
+.github-logo {
   width: 48px;
+}
+
+.linkedin-logo {
+  width: 58px;
+}
+
+.github-logo,
+.linkedin-logo {
+  margin: 0px 24px;
 }
