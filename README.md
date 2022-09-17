@@ -1,3 +1,3 @@
-# Portolfio Site
+# Portfolio Site
 
 Welcome! This repository hosts my web development portfolio site, built using [Astro](https://astro.build/).
