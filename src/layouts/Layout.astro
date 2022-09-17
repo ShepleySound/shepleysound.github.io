@@ -3,6 +3,9 @@ export interface Props {
 	title: string;
 }
 
+import githubLogo from "../assets/icons8_github.svg";
+import linkedinLogo from "../assets/icons8_linkedin.svg";
+
 const { title } = Astro.props;
 ---
 
@@ -17,44 +20,56 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<footer>
+			<a href="http://github.com/shepleysound">
+				<img src={githubLogo} />
+			</a>
+			<a href="http://linkedin.com/in/robert-shepley">
+				<img src={linkedinLogo} />
+			</a>
+		</footer>
+		<style>
+			:root {
+				--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+				--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+				--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+				--color-text: hsl(12, 5%, 4%);
+				--color-bg: hsl(10, 21%, 95%);
+				--color-border: hsl(17, 24%, 90%);
+			}
+
+			html {
+				font-family: system-ui, sans-serif;
+				font-size: var(--font-size-base);
+				color: var(--color-text);
+				background-color: var(--color-bg);
+			}
+
+			body {
+				margin: 0;
+			}
+
+			footer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
+
+		<style is:global>
+			h1 {
+				font-size: var(--font-size-xl);
+			}
+
+			h2 {
+				font-size: var(--font-size-lg);
+			}
+
+			code {
+				font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+					DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+			}
+		</style>
 	</body>
 </html>
-<style>
-	:root {
-		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-		--color-text: hsl(12, 5%, 4%);
-		--color-bg: hsl(10, 21%, 95%);
-		--color-border: hsl(17, 24%, 90%);
-	}
-
-	html {
-		font-family: system-ui, sans-serif;
-		font-size: var(--font-size-base);
-		color: var(--color-text);
-		background-color: var(--color-bg);
-	}
-
-	body {
-		margin: 0;
-	}
-
-
-</style>
-
-<style is:global>
-	h1 {
-		font-size: var(--font-size-xl);
-	}
-
-	h2 {
-		font-size: var(--font-size-lg);
-	}
-
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
