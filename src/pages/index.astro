@@ -4,11 +4,12 @@ import Card from "../components/Card.astro";
 ---
 
 <Layout title="Robert Shepley">
+	<p class="development-info">This site is currently in development!</p>
 	<main>
 		<h1>Robert <span class="text-gradient">Shepley</span></h1>
 		<p class="instructions">
 			Welcome to my page!<br />
-			Here are some of the projects I'm most proud of.
+			Here are some of the projects I'm most proud of.<br />
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -85,11 +86,13 @@ import Card from "../components/Card.astro";
 		color: var(--color-bg);
 	}
 
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
+	.development-info {
+		background: #6a526b;
+		color: var(--color-bg);
+		margin: 0;
+		text-align: center;
+		line-height: 1.6;
+		padding: 0.5rem;
 	}
 
 	.link-card-grid {

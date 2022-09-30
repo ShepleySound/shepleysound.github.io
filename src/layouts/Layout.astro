@@ -3,8 +3,10 @@ export interface Props {
 	title: string;
 }
 
-import githubLogo from "../assets/icons8_github.svg";
-import linkedinLogo from "../assets/icons8_linkedin.svg";
+import { Icon } from "astro-icon";
+import Footer from "../components/Footer.astro";
+// import githubLogo from "../assets/icons8_github.svg";
+// import linkedinLogo from "../assets/icons8_linkedin.svg";
 
 const { title } = Astro.props;
 ---
@@ -20,14 +22,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<footer>
-			<a href="http://github.com/shepleysound">
-				<img src={githubLogo} />
-			</a>
-			<a href="http://linkedin.com/in/robert-shepley">
-				<img src={linkedinLogo} />
-			</a>
-		</footer>
+		<Footer />
 		<style>
 			:root {
 				--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -47,13 +42,10 @@ const { title } = Astro.props;
 			}
 
 			body {
+				height: 100vh;
 				margin: 0;
-			}
-
-			footer {
 				display: flex;
-				align-items: center;
-				justify-content: center;
+				flex-direction: column;
 			}
 		</style>
 
